@@ -27,7 +27,7 @@ function EditEmployee() {
         try {
             console.log(modifiedEmployeeObj)
             // make HTTP PUT request to update employee details in backend
-            const res = await axios.put(`https://employee-app-ebon-ten.vercel.app/employee-api/employee/${state._id}`, modifiedEmployeeObj)
+            const res = await axios.put(`https://employee-app-ebon-ten.vercel.app/_/backend/employee-api/employee/${state._id}`, modifiedEmployeeObj)
 
             if (res.status === 200) {
                 console.log("Updated user successfully")

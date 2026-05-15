@@ -16,7 +16,7 @@ function CreateEmployee() {
             setLoading(true)
             console.log(newEmployeeObj)
             // make HTTP post request
-            const res = await fetch("https://employee-app-ebon-ten.vercel.app/employee-api/employee", {
+            const res = await fetch("https://employee-app-ebon-ten.vercel.app/_/backend/employee-api/employee", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newEmployeeObj)

@@ -13,7 +13,7 @@ function EmployeeList() {
     async function getEmployees() {
         setLoading(true)
         try {
-            let res = await fetch('https://employee-app-ebon-ten.vercel.app/employee-api/employee')
+            let res = await fetch('https://employee-app-ebon-ten.vercel.app/_/backend/employee-api/employee')
             if (res.status === 200) {
                 // add employees to state variable
                 let resObj = await res.json()
@@ -51,7 +51,7 @@ function EmployeeList() {
     }
     // delete
     const deleteEmployee = async (eid) => {
-        const res = await axios.delete(`http://localhost:3000/employee-api/employee/${eid}`)
+        const res = await axios.delete(`https://employee-app-ebon-ten.vercel.app/_/backend/employee-api/employee/${eid}`)
         if (res.status === 200) {
             // fetch the data from db
             getEmployees()
