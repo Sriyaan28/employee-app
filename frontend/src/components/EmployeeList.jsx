@@ -13,7 +13,7 @@ function EmployeeList() {
     async function getEmployees() {
         setLoading(true)
         try {
-            let res = await fetch('http://localhost:3000/employee-api/employee')
+            let res = await fetch('https://employee-app-ebon-ten.vercel.app/employee-api/employee')
             if (res.status === 200) {
                 // add employees to state variable
                 let resObj = await res.json()
@@ -71,7 +71,7 @@ function EmployeeList() {
                             <div className="flex justify-around mt-4">
                                 <button onClick={() => getEmployee(empObj)} className=" bg-gray-300 py-1 px-2 hover:bg-green-300 shadow-green-600 hover:shadow rounded-xl">👁️</button>
                                 <button onClick={() => editEmployee(empObj)} className=" bg-gray-300 py-1 px-2 hover:bg-yellow-300 shadow-yellow-500 hover:shadow rounded-xl">✏️</button>
-                                <button onClick={()=> deleteEmployee(empObj._id)} className=" bg-gray-300 py-1 px-2 hover:bg-red-400 shadow-red-600 hover:shadow rounded-xl">🗑️</button>
+                                <button onClick={() => deleteEmployee(empObj._id)} className=" bg-gray-300 py-1 px-2 hover:bg-red-400 shadow-red-600 hover:shadow rounded-xl">🗑️</button>
                             </div>
                         </div>)
 

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { useState } from "react" 
+import { useState } from "react"
 import Loading from "./Loading.jsx"
 import { useNavigate } from "react-router"
 
@@ -12,42 +12,36 @@ function CreateEmployee() {
 
 
     const onFormSubmit = async (newEmployeeObj) => {
-        try{
+        try {
             setLoading(true)
             console.log(newEmployeeObj)
             // make HTTP post request
-            const res = await fetch("http://localhost:3000/employee-api/employee", {
+            const res = await fetch("https://employee-app-ebon-ten.vercel.app/employee-api/employee", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newEmployeeObj)
             })
-            if(res.status === 201)
-            {
+            if (res.status === 201) {
                 console.log("Employee created")
                 navigate("/list-of-employees")
             }
-            else
-            {
+            else {
                 // throw error to be caught in catch block
                 const errorResponse = await res.json()
                 throw new Error(errorResponse.message)
             }
         }
-        catch(error)
-        {
+        catch (error) {
             setError(error)
         }
-        finally
-        {
+        finally {
             setLoading(false)
         }
     }
-    if(loading)
-    {
+    if (loading) {
         return <Loading />
     }
-    if(error)
-    {
+    if (error) {
         return <p className="text-center text-2xl text-red-500">{error.message}</p>
     }
 
