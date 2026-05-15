@@ -43,7 +43,7 @@ This is a full-stack web application built with a React frontend (using Vite) an
 
 ---
 
-## 🛠️ Steps to Create This App from Scratch
+##  Steps to Create This App from Scratch
 
 If you want to create a similar project from scratch, follow these steps:
 
