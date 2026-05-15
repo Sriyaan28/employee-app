@@ -6,6 +6,7 @@ This is a full-stack web application built with a React frontend (using Vite) an
 - Node.js installed
 - MongoDB installed (or a MongoDB Atlas connection string)
 
+
 ---
 
 ##  How to Run This Project Locally
